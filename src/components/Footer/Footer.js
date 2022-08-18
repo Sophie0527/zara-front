@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -7,14 +8,30 @@ function Footer() {
       <FooterBox>
         <h2>뉴스레이터에 가입하세요</h2>
         <ul>
-          <li>TIKTOK</li>
-          <li>INSTAGRAM</li>
-          <li>FACEBOOK</li>
-          <li>TWITTER</li>
-          <li>PINTEREST</li>
-          <li>KAKAO</li>
-          <li>YOUTUBE</li>
-          <li>SPOTIFY</li>
+          <Link to="/">
+            <li>TIKTOK</li>
+          </Link>
+          <Link to="/">
+            <li>INSTAGRAM</li>
+          </Link>
+          <Link to="/">
+            <li>FACEBOOK</li>
+          </Link>
+          <Link to="/">
+            <li>TWITTER</li>
+          </Link>
+          <Link to="/">
+            <li>PINTEREST</li>
+          </Link>
+          <Link to="/">
+            <li>KAKAO</li>
+          </Link>
+          <Link to="/">
+            <li>YOUTUBE</li>
+          </Link>
+          <Link to="/">
+            <li>SPOTIFY</li>
+          </Link>
         </ul>
       </FooterBox>
       <CompanyInfo>
@@ -60,6 +77,7 @@ const FooterBox = styled.div`
       margin: 8px;
       letter-spacing: 0.8px;
       transform: scaleY(1.3);
+      color: black;
     }
   }
 `;
