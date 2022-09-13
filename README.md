@@ -40,11 +40,13 @@ ZARA online store clone project [ZARA Official Website](https://www.zara.com/kr/
 ![category](https://user-images.githubusercontent.com/100933263/189891396-27bc4397-4519-4b1d-a174-ff3a2b49b747.gif)
 
 ### 1) header 메뉴 아이콘 클릭 시 카테고리 박스 생성
+<img width="300" alt="카테고리 열기" src="https://user-images.githubusercontent.com/100933263/189896370-c367f78b-fa75-495c-a138-63631b6b4167.gif">
 
 카테고리 클릭 시, setState(true)로 변경하여 카테고리 박스 보여주기.\
 'X' 아이콘 클릭 시, setState(false)로 변경하여 카테고리 박스 숨기기. 
 
 ### 2) 카테고리 클릭 시, 해당 글자 스타일 변경 및 해당 디테일 카테고리 보여주기.
+<img width="250" alt="카테고리 글자스타일 변경" src="https://user-images.githubusercontent.com/100933263/189896771-546b0a0a-350c-4db8-a5e4-31abe64ad25c.gif">
 
 **∙글자 스타일 변경**\
 글자 두껍게하기\
