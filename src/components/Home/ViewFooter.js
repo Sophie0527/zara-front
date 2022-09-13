@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { CustomMediaStyle } from '../../styles/CustomMediaStyle';
 
 function ViewFooter() {
   return (
@@ -20,7 +21,11 @@ const Container = styled.div`
   justify-content: center;
   text-align: center;
   padding-top: 50px;
-  margin-bottom: -140px;
+  ${CustomMediaStyle.lessThan('tablet')`
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 50px 30px 0 30px;
+	`}
   span:hover {
     font-weight: 600;
   }
@@ -28,6 +33,9 @@ const Container = styled.div`
     padding: 0 30px;
     font-size: 14px;
     cursor: pointer;
+    ${CustomMediaStyle.lessThan('tablet')`
+  padding: 10px 20px;
+	`}
   }
 `;
 

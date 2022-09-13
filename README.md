@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# ZARA 메인 페이지 클론 프로젝트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ZARA online store clone project [ZARA Official Website](https://www.zara.com/kr/).
 
-## Available Scripts
+## 1. slider banner 구현.
 
-In the project directory, you can run:
+라이브러리 없이 슬라이드 베너 구현.
 
-### `npm start`
+![slider banner](https://user-images.githubusercontent.com/100933263/189878271-0955cafd-f80e-4565-bced-7340a3b61039.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1) 버튼 클릭 이벤트 시, 슬라이더 위치 변경 / 버튼 유무 결정 / 버튼 글자 변경
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**∙슬라이더 위치 변경**\
+해당 부분을 useRef로 선택하여 스타일 변화하기.\
+〈CSS〉 transform 속성 : 요소의 위치를 이동시킴.\
+`transform:translate()`
 
-### `npm test`
+**∙버튼 유무 결정**\
+첫번째 베너에서는 왼쪽 버튼 안보임.\
+마지막 베너에서는 오른쪽 버튼 안보임.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**∙버튼 글자 변경**\
+베너 순서 ( WOMAN > MAN > KIDS > BEAUTY )에 따라 좌우 버튼 해당 글자로 변경.
 
-### `npm run build`
+### 2) 버튼 호버 시, 버튼 위치 이동.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img width="150" alt="버튼 위치 이동" src="https://user-images.githubusercontent.com/100933263/189887518-3875e588-3873-430e-b5eb-a9c9c9b56902.gif">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**∙CSS 트렌스폼**\
+요소의 위치를 이동시키는 속성.\
+`transform:translate()`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**∙CSS 트랜지션**\
+속성을 서서히 변화시키는 속성\
+`transition-duration: 2s`
 
-### `npm run eject`
+## 2. category modal 구현.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+카테고리 박스 모달로 구현.
+![category](https://user-images.githubusercontent.com/100933263/189891396-27bc4397-4519-4b1d-a174-ff3a2b49b747.gif)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 1) header 메뉴 아이콘 클릭 시 카테고리 박스 생성
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<img width="300" alt="카테고리 열기" src="https://user-images.githubusercontent.com/100933263/189896370-c367f78b-fa75-495c-a138-63631b6b4167.gif">
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+카테고리 클릭 시, setState(true)로 변경하여 카테고리 박스 보여주기.\
+'X' 아이콘 클릭 시, setState(false)로 변경하여 카테고리 박스 숨기기.
 
-## Learn More
+### 2) 카테고리 클릭 시, 해당 글자 스타일 변경 및 해당 디테일 카테고리 보여주기.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img width="250" alt="카테고리 글자스타일 변경" src="https://user-images.githubusercontent.com/100933263/189896771-546b0a0a-350c-4db8-a5e4-31abe64ad25c.gif">
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**∙글자 스타일 변경**\
+글자 두껍게하기\
+`border-bottom` 생성
 
-### Code Splitting
+**∙디테일 카테고리**\
+클릭하는 카테고리에 따라 디테일 카테고리 컴포넌트 보여주기.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Technlogies
 
-### Analyzing the Bundle Size
+ <div> 
+<img src="https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"> 
+<img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> 
+<img src="https://img.shields.io/badge/javascript-ffc700?style=for-the-badge&logo=javascript&logoColor=white">
+<img src="https://img.shields.io/badge/styled-components-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white">
+</div> 
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contact
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- ssh30510044@gmail.com, [기술블로그](https://sophie0527.tistory.com/), [깃허브](https://github.com/Sophie0527)

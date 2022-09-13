@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { CustomMediaStyle } from '../../styles/CustomMediaStyle';
 
 function Footer() {
   return (
@@ -88,6 +89,10 @@ const CompanyInfo = styled.div`
   line-height: 16px;
   letter-spacing: 0.8px;
   text-transform: uppercase;
+  ${CustomMediaStyle.lessThan('tablet')`
+  width: 70%;
+  margin:  0 ;
+	  `}
 `;
 
 export default Footer;

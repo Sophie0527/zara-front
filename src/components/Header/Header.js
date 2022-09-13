@@ -7,6 +7,7 @@ import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import CategoryModal from '../Category/CategoryModal';
+import { CustomMediaStyle } from '../../styles/CustomMediaStyle';
 
 function Header() {
   // header 메뉴 아이콘 클릭 시 카테고리 박스 생성 (모달로 구현)
@@ -97,6 +98,10 @@ const HeaderLeft = styled.div`
     svg {
       width: 24px;
       height: 24px;
+      ${CustomMediaStyle.lessThan('mobile')`
+        width: 20px;
+        height: 20px;
+	    `}
     }
   }
   h1 {
@@ -107,6 +112,9 @@ const HeaderLeft = styled.div`
     transform: scaleY(1.5);
     color: black;
     cursor: pointer;
+    ${CustomMediaStyle.lessThan('tablet')`
+      font-size: 70px;
+	  `}
   }
 `;
 
@@ -119,11 +127,17 @@ const HeaderRight = styled.div`
   text-align: right;
   margin-left: 19px;
   font-size: 18px;
+  ${CustomMediaStyle.lessThan('mobile')`
+    font-size: 15px;
+	`}
   div {
     a {
       margin-right: 230px;
       padding-right: 32px;
       border-bottom: 0.5px solid black;
+      ${CustomMediaStyle.lessThan('desktop')`
+      margin-right: 0px;
+	`}
       span {
         font-weight: 500;
         color: black;

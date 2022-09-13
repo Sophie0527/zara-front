@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
+import { CustomMediaStyle } from '../../styles/CustomMediaStyle';
 
 function ViewContent() {
   // 슬라이더 위치 값을 위한 state
@@ -136,6 +137,18 @@ const BannerBox = styled.div`
   height: 600px;
   margin: 0 auto;
   overflow: hidden;
+  ${CustomMediaStyle.lessThan('desktop')`
+    width: 700px;
+    height: 500px;
+	`}
+  ${CustomMediaStyle.lessThan('tablet')`
+    width: 550px;
+    height: 500px;
+	`} 
+  ${CustomMediaStyle.lessThan('mobile')`
+    width: 390px;
+    height: 450px;
+	  `}
 `;
 
 const BannerImages = styled.div`
@@ -146,6 +159,18 @@ const BannerImages = styled.div`
       width: 1000px;
       height: 600px;
       object-fit: cover;
+      ${CustomMediaStyle.lessThan('desktop')`
+    width: 700px;
+    height: 500px;
+	    `}
+      ${CustomMediaStyle.lessThan('tablet')`
+    width: 550px;
+    height: 500px;
+	`}
+    ${CustomMediaStyle.lessThan('mobile')`
+    width: 390px;
+    height: 450px;
+	  `}
     }
   }
 `;
@@ -159,6 +184,11 @@ const BannerLeftBtns = styled.div`
   }
   div {
     display: flex;
+    ${CustomMediaStyle.lessThan('mobile')`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	  `}
   }
   button {
     display: flex;
@@ -172,10 +202,24 @@ const BannerLeftBtns = styled.div`
     margin: 0 10px;
     letter-spacing: 0.5px;
     transform: scaleY(1.3);
+    ${CustomMediaStyle.lessThan('tablet')`
+    width: 30px;
+    font-size: 10px;
+	  `}
+    ${CustomMediaStyle.lessThan('mobile')`
+    justify-content: center;
+	  `}
   }
   img {
     width: 20px;
     cursor: pointer;
+    ${CustomMediaStyle.lessThan('tablet')`
+    width: 10px;
+	  `}
+    ${CustomMediaStyle.lessThan('mobile')`
+    width: 15px;
+    margin-bottom: 3px;
+	  `}
   }
 `;
 
@@ -188,6 +232,11 @@ const BannerRightBtns = styled.div`
   }
   div {
     display: flex;
+    ${CustomMediaStyle.lessThan('mobile')`
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+	  `}
   }
   button {
     display: flex;
@@ -201,10 +250,24 @@ const BannerRightBtns = styled.div`
     margin: 0 10px;
     letter-spacing: 0.5px;
     transform: scaleY(1.3);
+    ${CustomMediaStyle.lessThan('tablet')`
+    width: 30px;
+    font-size: 10px;
+	  `}
+    ${CustomMediaStyle.lessThan('mobile')`
+    justify-content: center;
+	  `}
   }
   img {
     width: 20px;
     cursor: pointer;
+    ${CustomMediaStyle.lessThan('tablet')`
+    width: 10px;
+	  `}
+    ${CustomMediaStyle.lessThan('mobile')`
+    width: 15px;
+    margin-bottom: 3px;
+	  `}
   }
 `;
 
