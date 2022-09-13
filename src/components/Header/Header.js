@@ -50,7 +50,7 @@ const Container = styled.div`
 `;
 
 const HeaderBox = styled.div`
-  padding: 24px 30px 40px;
+  padding: 24px 30px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

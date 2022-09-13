@@ -46,7 +46,6 @@ function Footer() {
   );
 }
 const Container = styled.div`
-  /* margin: 0 auto; */
   margin: 0 70px;
 `;
 const FooterBox = styled.div`
