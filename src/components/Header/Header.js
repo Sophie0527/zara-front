@@ -1,21 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAlignJustify } from '@fortawesome/free-solid-svg-icons';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import CategoryModal from '../Category/CategoryModal';
 
 function Header() {
+  // header 메뉴 아이콘 클릭 시 카테고리 박스 생성 (모달로 구현)
+  const [categoryOpen, setCategoryOpen] = useState(false);
+  const openCategoryModal = () => {
+    if (!categoryOpen) {
+      setCategoryOpen(true);
+    } else {
+      setCategoryOpen(false);
+    }
+  };
+  // 로고 클릭 시 메인페이지로 이동 (+ window.location.reload() //리랜더링)
+  const navigate = useNavigate();
+
   return (
     <Container>
+      <CategoryModal categoryOpen={categoryOpen} />
       <HeaderBox>
         <HeaderLeft>
-          <button>
-            <FontAwesomeIcon icon={faAlignJustify} />
+          <button onClick={openCategoryModal}>
+            {categoryOpen ? (
+              <FontAwesomeIcon icon={faClose} />
+            ) : (
+              <FontAwesomeIcon icon={faAlignJustify} />
+            )}
           </button>
-          <Link to="/">
-            <h1>ZARA</h1>
-          </Link>
+          <h1
+            onClick={() => {
+              navigate('/');
+              window.location.reload();
+            }}
+          >
+            ZARA
+          </h1>
         </HeaderLeft>
         <HeaderRight>
           <div>
@@ -55,17 +80,20 @@ const HeaderBox = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
+  background-color: transparent;
 `;
 
 const HeaderLeft = styled.div`
   align-items: flex-start;
   display: flex;
   button {
+    position: fixed;
     margin-top: 6px;
     margin-right: 10px;
     border: 0px;
     outline: 0px;
     background-color: transparent;
+    cursor: pointer;
     svg {
       width: 24px;
       height: 24px;
@@ -78,6 +106,7 @@ const HeaderLeft = styled.div`
     letter-spacing: -15px;
     transform: scaleY(1.5);
     color: black;
+    cursor: pointer;
   }
 `;
 
